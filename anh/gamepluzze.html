@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Làm Game Pluzze</title>
+    <style>
+        image{
+            height: 30px;
+            width:25px ;
+        }
+    </style>
+</head>
+<body onclick="check()">
+   <form>
+       <h2>Ghép Những Hình ảnh Với các câu đúng</h2>
+       <table>
+           <tr>
+               <td id="hinh1" onclick="doiHinh1()"><img src="anh1.jpg" height="200" width="180" alt=""></td>
+               <td id="hinh2" onclick="doiHinh2()"><img src="anh2_2.jpg" height="200" width="180" alt=""></td>
+               <td id="hinh3" onclick="doiHinh3()"><img src="anh3.jpg" height="200" width="180" alt=""></td>
+       </table>
+       <p id="result"></p>
+   </form>
+<script>
+    let x;
+    let y;
+    let z;
+   function doiHinh1() {
+        let hinh1 = '<img src="anh1.jpg" height="200" width="180" alt="">';
+        let hinh2 = '<img src="anh2_1.jpg" height="200" width="180" alt="">';
+       if (x===true){
+           x=false;
+           document.getElementById("hinh1").innerHTML=hinh2;
+       }else {
+           document.getElementById("hinh1").innerHTML=hinh1;
+           x=true;
+       }
+   }
+   function doiHinh2() {
+       let hinh1='<img src="anh2_2.jpg" height="200" width="180" alt="">';
+       let hinh2='<img src="anh2.jpg" height="200" width="180" alt="">';
+       if (y===true){
+           y=false;
+           document.getElementById("hinh2").innerHTML=hinh1;
+       }else {
+           document.getElementById("hinh2").innerHTML=hinh2;
+           y=true;
+       }
+   }
+    function doiHinh3() {
+        let hinh1='<img src="anh3.jpg" height="200" width="180" alt="">';
+        let hinh2='<img src="anh2_3.jpg" height="200" width="180" alt="">';
+        if (z===true){
+            z=false;
+            document.getElementById("hinh3").innerHTML=hinh2;
+        }else {
+            document.getElementById("hinh3").innerHTML=hinh1;
+            z=true;
+        }
+    }
+    function check() {
+       if ((x===true && y===true && z===true)|| (x===false&& y===false && z=== false)){
+           document.getElementById("result").innerHTML="Đúng rồi!";
+       }else {
+           document.getElementById("result").innerHTML= "Sai Rồi!";
+       }
+    }
+</script>
+</body>
+</html>
